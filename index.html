@@ -708,16 +708,53 @@ tr:nth-child(even) td{background:#f7f9fd}
 .tall{font-size:2.1rem;font-weight:800;color:var(--blue)}
 .big-stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:8px}
 .bs{background:linear-gradient(135deg,#fff,#f3f7ff);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-footer{color:var(--mut);font-size:.82rem;text-align:center;margin-top:26px}
+footer{color:var(--mut);font-size:.72rem;text-align:center;margin-top:22px}
 .leaflet-popup-content{font-family:inherit;font-size:.9rem}
+.analyst{margin:9px 0 0;padding-top:8px;border-top:1px solid rgba(255,255,255,.25);font-size:.72rem;line-height:1.4}
+.analyst strong{font-size:.8rem;letter-spacing:.01em}
+@media (max-width: 900px){
+	.wrap{padding:16px 12px 40px}
+	header{padding:20px 22px;border-radius:14px}
+	header h1{font-size:1.4rem;line-height:1.3}
+	.card{padding:16px;margin-bottom:14px}
+	table{font-size:.86rem;min-width:620px}
+	.card:has(table){overflow-x:auto}
+	#map{height:min(62vh,520px);min-height:380px}
+}
+@media (max-width: 600px){
+	.wrap{padding:10px 8px 28px}
+	header{padding:16px 18px;margin-bottom:12px}
+	header h1{font-size:1.2rem}
+	header p{font-size:.88rem}
+	.pill{font-size:.75rem;padding:3px 9px}
+	.analyst{font-size:.68rem}
+	.analyst strong{font-size:.76rem}
+	nav{gap:6px;flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;margin-bottom:12px;scrollbar-width:thin}
+	.tab{flex:0 0 auto;padding:8px 12px;font-size:.84rem;white-space:nowrap}
+	.grid-kpi{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:12px}
+	.kpi{padding:11px 12px;border-radius:10px}
+	.kv{font-size:1.25rem}
+	.kl{font-size:.8rem}
+	.ks{font-size:.72rem}
+	.card{padding:14px 12px;border-radius:12px}
+	.card h2{font-size:1.05rem}
+	.card .sub{font-size:.82rem}
+	.two{gap:10px}
+	.ctrls{gap:8px;font-size:.82rem}
+	.chk{padding:4px 6px}
+	#map{height:58vh;min-height:330px;border-radius:10px}
+	.note{padding:10px 12px;font-size:.78rem}
+	footer{font-size:.64rem;margin-top:16px}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
-  <h1>แดชบอร์ดเรื่องร้องเรียนด้าน Mobility</h1>
+	<h1>Dashboard สถิติข้อมูลเรื่องร้องเรียนด้านการจราจรและขนส่ง</h1>
   <p>ระบบ Traffy Fondue · กรุงเทพมหานคร · มิ.ย. 2565 – ก.ค. 2569 (2022-06 → 2026-07)</p>
   <span class="pill">อัปเดต 26 ส.ค. 2569 · 455,378 เรื่อง · 401,907 จุดพิกัด</span>
+	<p class="analyst"><strong>PRAPAWADEE WACHIRAPUT</strong><br>นักวิชาการสถิติชำนาญการ<br>กลุ่มงานสถิติและวิจัย<br>กองนโยบายและแผนงาน สจส.กทม.</p>
 </header>
 
 <nav><button class="tab active" data-t="overview">ภาพรวม</button><button class="tab" data-t="map">แผนที่จุดร้องเรียน</button><button class="tab" data-t="repeat">การร้องซ้ำ</button><button class="tab" data-t="trend">แนวโน้ม</button><button class="tab" data-t="break">รายกลุ่ม/รายเขต</button></nav>
@@ -794,7 +831,7 @@ footer{color:var(--mut);font-size:.82rem;text-align:center;margin-top:26px}
 
 <div class="note" style="margin-top:4px"><b>หมายเหตุระเบียบวิธี:</b> ป้ายกำกับกลุ่มจอดรถ/ขนส่ง/อุบัติเหตุ เริ่มบันทึกราวเดือนมกราคม 2566 · "ร้องซ้ำจุดพิกัดเดิม" นับจากพิกัดที่ตรงกันทุกตำแหน่งทศนิยม · "แจ้งซ้ำใกล้เคียง (is_repeat)" นับจาก comment+address+coords+timestamp เดียวกัน · พิกัดใช้งานได้ 455,301 จาก 455,378 เรื่อง (77 เรื่องอยู่นอกกรอบ กทม.)</div>
 
-<footer>แหล่งข้อมูล: ระบบ Traffy Fondue · จัดทำโดย กลุ่มงานสถิติและวิจัย กองนโยบายและแผนงาน สำนักการจราจรและขนส่ง กทม.<br>ประมวลผลจากไฟล์ mobility_2022-06_2026-07.csv (455,378 เรื่อง)</footer>
+<footer>แหล่งข้อมูล: ระบบ Traffy Fondue · จัดทำโดย Prapawadee Wachiraput นักวิชาการสถิติชำนาญการ กลุ่มงานสถิติและวิจัย กองนโยบายและแผนงาน สำนักการจราจรและขนส่ง กทม.<br>ประมวลผลจากไฟล์ mobility_2022-06_2026-07.csv (455,378 เรื่อง)</footer>
 </div>
 
 <script>/* @preserve
