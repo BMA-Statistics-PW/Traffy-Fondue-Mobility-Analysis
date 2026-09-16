@@ -1,20 +1,32 @@
 # Traffy Fondue Mobility Analysis
 
-Interactive Bangkok mobility dashboard based on Traffy Fondue complaint data.
+แดชบอร์ดเชิงโต้ตอบวิเคราะห์เรื่องร้องเรียนด้านการจราจรและการขนส่งในกรุงเทพมหานคร จากข้อมูล **Traffy Fondue** (เชื่อมต่อและดึงข้อมูลจริงผ่าน Public API)
 
-## Contents
+## ข้อมูลปัจจุบัน
+- **แหล่ง:** `publicapi.traffy.in.th/share/teamchadchart/search`
+- **อัปเดต:** 16 กันยายน 2569
+- **จำนวน:** 597,433 เรื่อง (7 กลุ่มปัญหาการจราจร/ขนส่ง)
+- **ช่วงข้อมูลที่จำแนกประเภทแล้ว:** มิ.ย. 2565 – พ.ย. 2568
 
-- `index.html` - dashboard entry point for GitHub Pages
-- `mobility_dashboard.html` - copy of the dashboard source
+## หน้าในแดชบอร์ด (5 แท็บ)
+1. **ภาพรวม** — KPI, สัดส่วนกลุ่มปัญหา, สถานะ, รูปแบบรายชั่วโมง
+2. **แผนที่จุดร้องเรียน** — แผนที่ Leaflet โหมดสีตามกลุ่ม / เน้นจุดร้องซ้ำ
+3. **การร้องซ้ำ** — จุดร้องซ้ำ/จุดเรื้อรัง และ 25 จุดพิกัดสูงสุด
+4. **แนวโน้ม** — รายเดือน (แยกกลุ่ม) และรายปี
+5. **รายกลุ่ม/รายเขต** — ตารางกลุ่มปัญหา, 12 เขตสูงสุด, รายเขต × กลุ่ม
 
-## Run locally
+## ไฟล์
+- `index.html` — จุดเข้าใช้งานสำหรับ GitHub Pages (self-contained, ฝัง Leaflet ในไฟล์)
+- `mobility_dashboard.html` — สำเนาของแดชบอร์ด
 
-Open `index.html` in a browser. The dashboard is a self-contained HTML file and does not require a build step.
+## เปิดใช้งาน
+เปิด `index.html` ในเบราว์เซอร์ได้ทันที (ต้องมีอินเทอร์เน็ตเพื่อโหลดแผนที่พื้นฐาน OpenStreetMap)
 
-## Publish with GitHub Pages
+## เผยแพร่ด้วย GitHub Pages
+ตั้งค่า Settings → Pages → Deploy from a branch → branch หลัก, โฟลเดอร์ `/(root)` แล้วเว็บจะใช้ `index.html` เป็นหน้าแรก
 
-In the repository settings, enable GitHub Pages from the default branch and the repository root. The published site will use `index.html` as its entry point.
+## หมายเหตุข้อมูล
+การจำแนกประเภทของ API สาธารณะมีความล่าช้า ชุดข้อมูลที่จำแนกกลุ่มแล้วจึงครอบคลุมถึงราวพฤศจิกายน 2568 · ไฟล์ CSV ต้นทางไม่รวมไว้ใน repo เพราะขนาดใหญ่
 
-## Data note
-
-The dashboard contains aggregated and sampled mobility views. The source CSV is intentionally not included in this repository because of its file size.
+---
+จัดทำโดย กลุ่มงานสถิติและวิจัย สำนักการจราจรและขนส่ง กรุงเทพมหานคร · © Prapawadee_W.
